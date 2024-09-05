@@ -9,18 +9,26 @@ const Header = () => {
           <ul className="flex space-x-4">
             <li>
               <a
-                href="https://github.com/AhmedHawater2003"
+                href="https://edu.ieee.org/eg-guc/"
                 className="text-gray-600 hover:text-gray-900"
               >
-                Github
+                Official Page
               </a>
             </li>
             <li>
               <a
-                href="https://www.linkedin.com/feed/"
+                href="https://www.facebook.com/IEEE.GUC.SB/"
                 className="text-gray-600 hover:text-gray-900"
               >
-                Linkedin
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/ieeegucsb/?hl=en"
+                className="text-gray-600 hover:text-gray-900"
+              >
+                Instagram
               </a>
             </li>
           </ul>
