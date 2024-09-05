@@ -4,7 +4,10 @@ export const formSchema = z.object({
     message: "Username must be at least 2 characters.",
   }),
   email: z.string().email(),
-  message: z.string(),
+  message: z.string().min(1, {
+    message:
+      "The feedback Message cannot be empty. It's a form for your feedback .. duh",
+  }),
 });
 
 export const tableSchema = formSchema.extend({

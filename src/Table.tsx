@@ -99,7 +99,7 @@ export function DataTableDemo({
             <DropdownMenuContent align="end">
               <DropdownMenuLabel>Actions</DropdownMenuLabel>
               <DropdownMenuItem onClick={() => viewFeedback(data)}>
-                View Feedback
+                View Full Feedback
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem onClick={() => deleteFeedback(data.id)}>
@@ -141,9 +141,10 @@ export function DataTableDemo({
 
   return (
     <div className="w-full">
-      <div className="flex items-center py-4">
+      <div className="flex items-center justify-between py-4">
+        <h1 className="text-4xl font-semibold ">Users Feedbacks</h1>
         <Input
-          placeholder="Filter emails..."
+          placeholder="Filter by emails..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("email")?.setFilterValue(event.target.value)

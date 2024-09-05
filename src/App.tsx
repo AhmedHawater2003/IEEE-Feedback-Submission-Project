@@ -21,6 +21,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { Textarea } from "./components/ui/textarea";
 import { FeedbackDialog } from "./FullFeedbackDialog";
+import Header from "./Header";
 import { Feedback, TableData, formSchema } from "./lib/types";
 import { DataTableDemo } from "./Table";
 
@@ -47,7 +48,8 @@ export default function App() {
   }
   return (
     <>
-      <div className="min-h-screen mx-auto flex flex-col md:flex-row items-center gap-4 p-4">
+      <Header />
+      <div className="flex flex-col md:flex-row items-center gap-8 p-8">
         <Card className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl">
           <CardHeader>
             <CardTitle className="text-xl">Submit Your Feedback</CardTitle>
