@@ -1,7 +1,6 @@
 import { Feedback } from "@/data/schemas";
 import { ColumnDef } from "@tanstack/react-table";
 import { ArrowUpDown } from "lucide-react";
-import DataTableRowsActions from "./data-table-row-actions";
 import { Button } from "./ui/button";
 
 export const columns: ColumnDef<Feedback>[] = [
@@ -37,12 +36,5 @@ export const columns: ColumnDef<Feedback>[] = [
     cell: ({ row }) => (
       <div className="truncate max-w-lg">{row.getValue("message")}</div>
     ),
-  },
-  {
-    id: "actions",
-    enableHiding: false,
-    cell: () => {
-      return <DataTableRowsActions />;
-    },
   },
 ];

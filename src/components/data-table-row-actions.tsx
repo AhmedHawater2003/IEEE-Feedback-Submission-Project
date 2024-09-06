@@ -9,8 +9,19 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Feedback } from "@/data/schemas";
 
-function DataTableRowsActions() {
+type DataTableRowsActionsProps = {
+  rowData: Feedback;
+  onRemoveFeedback: (feedback: Feedback) => void;
+  onViewFullFeedback: (feedback: Feedback) => void;
+};
+
+function DataTableRowsActions({
+  rowData,
+  onRemoveFeedback,
+  onViewFullFeedback,
+}: DataTableRowsActionsProps) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -21,10 +32,16 @@ function DataTableRowsActions() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuLabel>Actions</DropdownMenuLabel>
-
         <DropdownMenuSeparator />
-        <DropdownMenuItem>View customer</DropdownMenuItem>
-        <DropdownMenuItem>View payment details</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => onViewFullFeedback(rowData)}>
+          View Full Feedback
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className="text-destructive data-[highlighted]:text-destructive"
+          onClick={() => onRemoveFeedback(rowData)}
+        >
+          Remove Feedback
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

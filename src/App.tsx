@@ -3,6 +3,7 @@ import { FullFeedbackDialog } from "@/components/full-feedback-dialog";
 import Header from "@/components/header";
 import { Feedback } from "@/data/schemas";
 import { useState } from "react";
+import { FeedbackDataTableP } from "./components/feedback-data-table";
 
 export default function App() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
@@ -17,8 +18,10 @@ export default function App() {
     setIsDialogOpen(true);
   };
 
-  function handleDeleteFeedback(id: number) {
-    setFeedbacks((prevData) => prevData.filter((item) => item.id !== id));
+  function handleRemoveFeedback(feedback: Feedback) {
+    setFeedbacks((prevData) =>
+      prevData.filter((item) => item.id !== feedback.id)
+    );
   }
 
   function handleAddFeedback(feedback: Feedback) {
@@ -30,6 +33,11 @@ export default function App() {
       <Header />
       <div className="flex flex-col md:flex-row items-center gap-8 p-8">
         <FeedbackForm onAddFeedback={handleAddFeedback} />
+        <FeedbackDataTableP
+          data={feedbacks}
+          onRemoveFeedback={handleRemoveFeedback}
+          onViewFullFeedback={handleViewFullFeedback}
+        />
         {selectedFeedback && (
           <FullFeedbackDialog
             isOpen={isDialogOpen}

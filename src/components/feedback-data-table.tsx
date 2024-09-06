@@ -1,4 +1,3 @@
-import { columns } from "@/components/columns";
 import {
   ColumnFiltersState,
   SortingState,
@@ -22,17 +21,21 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { Feedback } from "../data/schemas";
+import { Feedback } from "@/data/schemas";
+import { columns } from "./columns";
+import DataTableRowsActions from "./data-table-row-actions";
 
-export function FeedbackList({
-  data,
-  viewFeedback,
-  deleteFeedback,
-}: {
+type FeedbackDataTableProps = {
   data: Feedback[];
-  viewFeedback: (feedback: Feedback) => void;
-  deleteFeedback: (id: number) => void;
-}) {
+  onRemoveFeedback: (feedback: Feedback) => void;
+  onViewFullFeedback: (feedback: Feedback) => void;
+};
+
+export function FeedbackDataTableP({
+  data,
+  onRemoveFeedback,
+  onViewFullFeedback,
+}: FeedbackDataTableProps) {
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -62,8 +65,8 @@ export function FeedbackList({
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between py-4">
-        <h1 className="text-4xl font-semibold ">Users Feedbacks</h1>
+      <div className="flex flex-col md:flex-row items-center gap-4 justify-between py-4">
+        <h1 className="text-3xl font-semibold px-4">Users Feedbacks</h1>
         <Input
           placeholder="Filter by emails..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
@@ -106,6 +109,13 @@ export function FeedbackList({
                       )}
                     </TableCell>
                   ))}
+                  <TableCell>
+                    <DataTableRowsActions
+                      rowData={row.original}
+                      onRemoveFeedback={onRemoveFeedback}
+                      onViewFullFeedback={onViewFullFeedback}
+                    />
+                  </TableCell>
                 </TableRow>
               ))
             ) : (

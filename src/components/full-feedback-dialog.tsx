@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Feedback } from "@/data/schemas";
+import { Separator } from "./ui/separator";
 
 interface FeedbackDialogProps {
   isOpen: boolean;
@@ -29,6 +30,7 @@ export function FullFeedbackDialog({
             Viewing feedback from {feedback.name}
           </DialogDescription>
         </DialogHeader>
+        <Separator />
         <ScrollArea className="flex-grow p-6">
           <div className="space-y-4">
             <div>
