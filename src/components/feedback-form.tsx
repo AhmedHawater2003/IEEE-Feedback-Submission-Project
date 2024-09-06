@@ -47,7 +47,7 @@ function FeedbackForm({
       <CardHeader>
         <CardTitle className="text-xl">Submit Your Feedback</CardTitle>
         <CardDescription>
-          Enter your information to create an account
+          Enter your information to submit a feedback
         </CardDescription>
       </CardHeader>
       <CardContent>
