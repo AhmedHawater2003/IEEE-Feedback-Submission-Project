@@ -3,7 +3,7 @@ const Header = () => {
     <header className="w-full bg-white shadow-md">
       <div className="py-2 px-4 flex items-center justify-between">
         <div className="flex items-center">
-          <img src="Logo.webp" alt="Logo" className="w-60 h-16" />
+          <img src="logo.svg" alt="Logo" className="h-10 mr-2" />
         </div>
         <nav className="flex items-center justify-between p-4">
           <ul className="flex space-x-4">
