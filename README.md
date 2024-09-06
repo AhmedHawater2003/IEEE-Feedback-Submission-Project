@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+# Feedback Submission Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that allows users to submit feedback and displays a summary of all feedback submissions. This project provides a simple and intuitive interface for collecting and reviewing user feedback.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Tech Stack](#tech-stack)
+- [Main Features](#main-features)
+- [Live Demo](#live-demo)
+- [Try it on your Machine](#try-it-on-your-machine)
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui&logoColor=white)
+![Zod](https://img.shields.io/badge/zod-3068CE?style=for-the-badge&logo=zod&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-- Configure the top-level `parserOptions` property like this:
+## Main Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. **Feedback Submission Form**: 
+   - User-friendly form for submitting feedback
+   - Fields for name, email, and feedback message
+   - Form validation using Zod
+
+2. **Feedback Display**:
+   - Summary view of all submitted feedback
+   - Responsive design for various screen sizes
+
+3. **Modern UI**:
+   - Styled with shadcn/ui and Tailwind CSS
+   - Responsive and accessible design
+
+## Live Demo
+
+Check out the live demo of the project: [https://hawater.com](https://hawater.com)
+
+## Try it on your Machine
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/feedback-submission-project.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+2. Navigate to the project directory
+```bash
+cd feedback-submission-project
 ```
+
+3. Install dependencies
+```bash
+npm install
+```
+
+4. Run the development server
+```bash
+npm run dev
+```
+
+5. Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
