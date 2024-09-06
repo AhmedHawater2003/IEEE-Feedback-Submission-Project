@@ -36,13 +36,13 @@ A web application that allows users to submit feedback and displays a summary of
 
 ## Live Demo
 
-Check out the live demo of the project: [https://hawater.com](https://hawater.com)
+Check out the live demo of the project: [https://ieee-feedback-submission-project.vercel.app](https://ieee-feedback-submission-project.vercel.app)
 
 ## Try it on your Machine
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/feedback-submission-project.git
+git clone https://github.com/AhmedHawater2003/IEEE-Feedback-Submission-Project.git
 ```
 
 2. Navigate to the project directory
