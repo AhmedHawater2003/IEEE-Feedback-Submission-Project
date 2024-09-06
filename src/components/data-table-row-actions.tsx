@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-function Actions() {
+function DataTableRowsActions() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -30,4 +30,4 @@ function Actions() {
   );
 }
 
-export default Actions;
+export default DataTableRowsActions;

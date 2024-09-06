@@ -7,15 +7,15 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { TableData } from "./lib/types";
+import { Feedback } from "@/data/schemas";
 
 interface FeedbackDialogProps {
   isOpen: boolean;
   onClose: () => void;
-  feedback: TableData;
+  feedback: Feedback;
 }
 
-export function FeedbackDialog({
+export function FullFeedbackDialog({
   isOpen,
   onClose,
   feedback,

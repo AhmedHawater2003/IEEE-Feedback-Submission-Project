@@ -1,5 +1,7 @@
 import { z } from "zod";
-export const formSchema = z.object({
+
+export const feedbackSchema = z.object({
+  id: z.number().optional(),
   name: z.string().min(2, {
     message: "Username must be at least 2 characters.",
   }),
@@ -10,9 +12,4 @@ export const formSchema = z.object({
   }),
 });
 
-export const tableSchema = formSchema.extend({
-  id: z.number(),
-});
-
-export type Feedback = z.infer<typeof formSchema>;
-export type TableData = z.infer<typeof tableSchema>;
+export type Feedback = z.infer<typeof feedbackSchema>;
